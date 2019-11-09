@@ -1,0 +1,31 @@
+package com.company;
+
+import java.util.Scanner;
+import java.util.function.Function;
+
+public class Main{
+
+    public static void main(String[] args) {
+        Integer[] numbers = new Integer[5];
+        numbers[0] = 4;
+        numbers[1] = 20000;
+        numbers[2] = 10;
+        numbers[3] = 1000;
+        numbers[4] = 80;
+        System.out.println(findMax(numbers, 0, numbers.length - 1));
+    }
+    public static <E extends Comparable<E>> E findMax(E a[] , int f, int l){
+        E max = a[f];
+        if(f == l){
+            return  a[f];
+        }
+        else if((a[l]).compareTo(a[f]) > 0){
+            return  findMax(a, f+1 , l);
+        }
+        else{
+            return a[f];
+        }
+    }
+
+
+}
